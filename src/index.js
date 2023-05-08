@@ -22,11 +22,11 @@ nameCountry.addEventListener(
   }, DEBOUNCE_DELAY)
 );
 
-// fetchCountries();
 function getData(data) {
   if (data.length > 10) {
     Notify.info(`Too many matches found. Please enter a more specific name.`);
   } else if (data.length <= 10 && data.length >= 2) {
+    countrySearch.innerHTML = '';
     listCountry(data);
   } else if (data.length === 1) {
     fullListCountry(data);
